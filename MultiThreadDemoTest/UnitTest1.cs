@@ -17,7 +17,8 @@ namespace MultiThreadDemoTest
                 empdetails.Add(new EmployeeDetails(employeeID: 1, employeeName: "singham", "7898323", "cleaning"));
 
                 EmployeePayrollOperation employeepayroll = new EmployeePayrollOperation();
-                employeepayroll.AddEmployeeToPayroll(empdetails);
+                //employeepayroll.AddEmployeeToPayroll(empdetails);
+                employeepayroll.addEmployeeToPayrollThread(empdetails);
 
             }
 

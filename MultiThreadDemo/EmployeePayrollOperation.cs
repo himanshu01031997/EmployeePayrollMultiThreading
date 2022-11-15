@@ -24,5 +24,19 @@ namespace MultiThreadDemo
         {
             employeeDetails.Add(emp);
         }
+        public void addEmployeeToPayrollThread(List<EmployeeDetails> listempdetails1)
+        {
+            listempdetails1.ForEach(empdata =>
+            {
+                Task thread = new Task(() =>
+                {
+                    Console.WriteLine("employee being added:" + empdata.EmployeeName);
+                    this.AddEmployeeToPayroll(empdata);
+                    Console.WriteLine("employee added:" + empdata.EmployeeName);
+                });
+                thread.Start();
+
+            });
+        }
     }
 }
